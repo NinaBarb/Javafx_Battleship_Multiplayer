@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="820.0" prefWidth="959.0" styleClass="body" stylesheets="@../style/GameView.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hr.algebra.controller.GameViewController">
+   <bottom>
+      <Pane prefHeight="122.0" prefWidth="1144.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="btnPlay" layoutX="811.0" layoutY="44.0" mnemonicParsing="false" onAction="#btnPlay_Clicked" prefHeight="50.0" prefWidth="134.0" text="Start game!">
+               <font>
+                  <Font name="Microsoft JhengHei Light" size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnHostGame" layoutX="656.0" layoutY="44.0" mnemonicParsing="false" onAction="#btnHostGame_Clicked" prefHeight="50.0" prefWidth="134.0" text="Host game">
+               <font>
+                  <Font name="Microsoft JhengHei Light" size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnConnect" layoutX="501.0" layoutY="44.0" mnemonicParsing="false" onAction="#btnConnect_Clicked" prefHeight="50.0" prefWidth="134.0" text="Connect">
+               <font>
+                  <Font name="Microsoft JhengHei Light" size="16.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+   </bottom>
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="Save">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#saveGame_Click" text="Game" />
+                  <MenuItem mnemonicParsing="false" onAction="#documentation_Click" text="Documentation" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Load">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#loadGame_Click" text="Load game" />
+               </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <right>
+      <AnchorPane prefHeight="796.0" prefWidth="451.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextArea fx:id="taChat" editable="false" layoutX="7.0" layoutY="282.0" prefHeight="519.0" prefWidth="444.0" wrapText="true">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </TextArea>
+            <TextArea fx:id="taInput" disable="true" layoutX="7.0" layoutY="836.0" onKeyPressed="#keyEntered" prefHeight="44.0" prefWidth="402.0" />
+            <Button fx:id="btnSend" disable="true" layoutX="409.0" layoutY="836.0" mnemonicParsing="false" onAction="#btnSendMessage" prefHeight="44.0" prefWidth="34.0" text="&gt;" textFill="#a14265">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="500.0" right="20.0" top="300.0" />
+         </BorderPane.margin>
+      </AnchorPane>
+   </right>
+</BorderPane>
